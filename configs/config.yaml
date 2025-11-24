@@ -1,0 +1,36 @@
+# Travel Recommendation System Configuration
+
+data:
+  data_dir: "data/raw"
+  test_size: 0.2
+  random_state: 42
+
+models:
+  popularity:
+    random_state: 42
+  
+  content_based:
+    random_state: 42
+  
+  collaborative_filtering:
+    n_neighbors: 5
+    random_state: 42
+  
+  hybrid:
+    content_weight: 0.4
+    collab_weight: 0.4
+    popularity_weight: 0.2
+    random_state: 42
+  
+  matrix_factorization:
+    n_factors: 50
+    n_iterations: 20
+    regularization: 0.01
+    random_state: 42
+
+evaluation:
+  k_values: [5, 10, 20]
+
+demo:
+  top_k: 10
+  port: 8501
